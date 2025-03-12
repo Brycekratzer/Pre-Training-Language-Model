@@ -79,36 +79,6 @@ tqdm
 sklearn
 ```
 
-### Pre-training a Model
-
-1. Set up environment with required dependencies
-2. Prepare your training dataset
-3. Adjust configuration in `config.json` if needed
-4. Run training:
-
-```bash
-python trainModel.py
-```
-
-### Using Pre-trained Model for Classification
-
-```python
-from transformers import ElectraTokenizerFast
-from transformers import ElectraConfig
-
-# Load model configuration
-config = ElectraConfig.from_json_file("config.json")
-
-# Initialize model
-model = ELECTRAClass(NUM_OUT=7)  # For 7-class classification
-
-# Load pre-trained weights
-model.load_state_dict(torch.load("babylm_model.bin"))
-
-# Use for prediction
-# ...
-```
-
 ## Conclusions
 
 The project demonstrates that custom pre-trained ELECTRA models can be effectively created using moderate computing resources and limited datasets. While BERT outperformed our ELECTRA model in immediate accuracy, ELECTRA showed promising efficiency characteristics with:
